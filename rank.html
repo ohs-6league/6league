@@ -20,10 +20,42 @@
 
 <body>
 	ロクリーグ ランキング<br>
-	<iframe
+	<!--<iframe
 		src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4hnt5mc10A3Agm3GDTfVmu7uU_Y1ZgH5I4dJOnv_IwspTLlHSuA1BRdFAD3hWGBMoqRWnBDXiqwBf/pubhtml?&amp;single=true&amp;widget=true&amp;headers=false&gid=0&range=a1:c5"
 		style="width:640px; height:300px">
-	</iframe>
+	</iframe> -->
+	<table border="1" id="rank-table">
+		<tr>
+			<th>順位</th>
+			<th>名前</th>
+			<th>スコア</th>
+		</tr>
+		<tr>
+			<td colspan="3">取得中…</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		const url = "https://script.google.com/macros/s/AKfycbzZj7qkMe7f_j0YXzfpl1Q0UuV23TEWflKRFfULILQzt3g2glIw03zq8RTxp-bLqHcm/exec"
+		fetch(url, {
+			method: "GET",
+		}).then(response => response.text())
+			.then(text => {
+				var arr = text.split(',');
+				//カンマが入るとバグる！！ 正規表現で弾くようにしておくこと
+				var table_ele = document.getElementById('rank-table');
+				table_ele.deleteRow(-1);
+				for (var i = 0; i < 5; i++) {
+					var tr = document.createElement('tr');
+					for (var j = 0; j < 3; j++) {
+						var td = document.createElement('td');
+						td.innerText = arr[i * 3 + j];
+						tr.appendChild(td);
+					}
+					table_ele.appendChild(tr);
+				}
+			});
+	</script>
+
 </body>
 
 
