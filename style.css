@@ -1,3 +1,129 @@
+body {
+	background-image: url(img/background.jpg);
+	font-family: "ヒラギノ角ゴ ProN W3",
+		HiraKakuProN-W3,
+		Verdana,
+		Helvetica,
+		Arial,
+		游ゴシック,
+		"Yu Gothic",
+		メイリオ,
+		Meiryo,
+		sans-serif;
+}
+
 h1 {
-	color:#f62e38;
+	color: #f62e38;
+}
+
+.ul_top {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	background-color: #595959;
+	margin: 5px -8px;
+	padding: 20px 0px;
+}
+
+.ul_top::after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 0;
+	width: 100%;
+	display: block;
+	border-style: solid none;
+	border-width: 2px;
+	border-color: white;
+	pointer-events: none;
+}
+
+.ul_top li {
+	list-style: none;
+	font-size: 18px;
+}
+
+.ul_top li a {
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	transition: .3s;
+	color: white;
+}
+
+.ul_top li a::after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: '';
+	width: 0;
+	height: 1px;
+	background-color: white;
+	transition: .3s;
+	transform: translateX(-50%);
+}
+
+.ul_top li a:hover::after {
+	width: 100%;
+}
+
+.ul_top li a:visited {
+	color: white;
+}
+
+.rel {
+	position: relative;
+}
+
+.ul_sns {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 120px;
+	height: 60px;
+	margin: auto 0 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: #0008;
+}
+
+.ul_sns li {
+	list-style: none;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.flowbtn9 {
+	display: inline-block;
+	font-size: 40px;
+	text-decoration: none;
+	transition: .5s;
+}
+
+.flowbtn9 .fa-twitter-square {
+	color: #55acee;
+}
+
+.flowbtn9 .fa-instagram {
+	color: #c6529a;
+}
+
+.flowbtn9 .fa-line {
+	color: #00c300;
+}
+
+.flowbtn9:hover {
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+}
+
+footer {
+	background-color: #595959;
+	margin: 5px -8px;
+	padding: 20px 8px;
+	text-align: center;
+	color:white;
 }
