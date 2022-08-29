@@ -4,77 +4,76 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-	<title>ロクリーグ | TOP</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Montserrat:ital,wght@0,400;1,400&display=swap"
+		rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
+	<title>ロクリーグ | ランキング</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta charset="utf-8" />
 </head>
 
-
-<header>
-	<div class="rel">
-		<a href="index.html"><img src="img/title.png" style="display:block; margin:auto; width:50%"></a>
-		<ul class="ul_sns">
-			<li><a href="https://twitter.com/ohs_6league" class="flowbtn9" ontouchstart=""><i
-						class="fab fa-twitter-square"></i></a>
-			</li>
-			<li><a href="https://www.instagram.com/ohs_6league" class="flowbtn9" ontouchstart=""><i
-						class="fab fa-instagram"></i></a>
-			</li>
-			<li><a href="https://line.me" class="flowbtn9" ontouchstart=""><i class="fab fa-line"></i></a></li>
-		</ul>
-	</div>
-	<ul class="ul_top">
-		<li><a href="news.html" ontouchstart="">NEWS</a></li>
-		<li><a href="project.html" ontouchstart="">PROJECT</a></li>
-		<li><a href="quiz.html" ontouchstart="">QUIZ</a></li>
-		<li><a href="rank.html" ontouchstart="">RANKING</a></li>
-		<li><a href="member.html" ontouchstart="">MEMBER</a></li>
-	</ul>
-</header>
-
+<script src="header.js"></script>
 
 <body>
-	ロクリーグ ランキング<br>
-	<!--<iframe
-		src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4hnt5mc10A3Agm3GDTfVmu7uU_Y1ZgH5I4dJOnv_IwspTLlHSuA1BRdFAD3hWGBMoqRWnBDXiqwBf/pubhtml?&amp;single=true&amp;widget=true&amp;headers=false&gid=0&range=a1:c5"
-		style="width:640px; height:300px">
-	</iframe> -->
-	<table border="1" id="rank-table">
-		<tr>
-			<th>順位</th>
-			<th>名前</th>
-			<th>スコア</th>
-		</tr>
-		<tr>
-			<td colspan="3">取得中…</td>
-		</tr>
-	</table>
-	<script type="text/javascript">
-		const url = "https://script.google.com/macros/s/AKfycbzZj7qkMe7f_j0YXzfpl1Q0UuV23TEWflKRFfULILQzt3g2glIw03zq8RTxp-bLqHcm/exec"
-		fetch(url, {
-			method: "GET",
-		}).then(response => response.text())
-			.then(text => {
-				var arr = text.split(',');
-				//カンマが入るとバグる！！ 正規表現で弾くようにしておくこと
-				var table_ele = document.getElementById('rank-table');
-				table_ele.deleteRow(-1);
-				for (var i = 0; i < 5; i++) {
-					var tr = document.createElement('tr');
-					for (var j = 0; j < 3; j++) {
-						var td = document.createElement('td');
-						td.innerText = arr[i * 3 + j];
-						tr.appendChild(td);
-					}
-					table_ele.appendChild(tr);
-				}
-			});
-	</script>
-
+	<h1>ロクリーグ ランキング</h1>
+	<div class="rank-container-big">
+		<div class="rank-container-small">
+			<table border="1" id="rank-table-a" class="rank-table">
+				<thead>
+					<tr>
+						<th colspan="3">シックスボンバー</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="3">取得中…</td>
+					</tr>
+				</tbody>
+			</table>
+			<table border="1" id="rank-table-b" class="rank-table">
+				<thead>
+					<tr>
+						<th colspan="3">漢字ツアーズ</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="3">取得中…</td>
+					</tr>
+				</tbody>
+			</table>
+			<table border="1" id="rank-table-c" class="rank-table">
+				<thead>
+					<tr>
+						<th colspan="3">パーセントバルーン</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="3">取得中…</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<table border="1" id="rank-table-d" class="rank-table">
+			<thead>
+				<tr>
+					<th>トロッコアドベンチャー 満点獲得者</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>取得中…</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="js_rank.js"></script>
 </body>
 
-
-<footer>
-	©2022 ロクリーグ実行委員会 All rights reserved.
-</footer>
+<script src="footer.js"></script>
 
 </html>

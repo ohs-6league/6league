@@ -1,6 +1,10 @@
 body {
-	background-image: url(img/background.jpg);
-	font-family: "ヒラギノ角ゴ ProN W3",
+	/*background-image: url(img/background_light.jpg);*/
+	background-color: rgb(201, 201, 201);
+	font-family:
+		'Montserrat',
+		'M PLUS Rounded 1c',
+		"ヒラギノ角ゴ ProN W3",
 		HiraKakuProN-W3,
 		Verdana,
 		Helvetica,
@@ -10,10 +14,23 @@ body {
 		メイリオ,
 		Meiryo,
 		sans-serif;
+	font-size: 16px;
+}
+
+p {
+	font-size: 20px;
+}
+
+li {
+	font-size: 20px;
 }
 
 h1 {
-	color: #f62e38;
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 36px;
 }
 
 .ul_top {
@@ -41,7 +58,8 @@ h1 {
 
 .ul_top li {
 	list-style: none;
-	font-size: 18px;
+	font-size: 24px;
+	font-family: 'Montserrat';
 }
 
 .ul_top li a {
@@ -80,7 +98,7 @@ h1 {
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
-	width: 120px;
+	width: 68px;
 	height: 60px;
 	margin: auto 0 0 auto;
 	display: flex;
@@ -120,10 +138,201 @@ h1 {
 	transform: translateY(-5px);
 }
 
+h1 {
+	text-align: center;
+}
+
 footer {
 	background-color: #595959;
 	margin: 5px -8px;
 	padding: 20px 8px;
 	text-align: center;
-	color:white;
+	color: white;
+}
+
+input[type=text] {
+	font-size: 18px;
+	font-family: 'Montserrat', 'M PLUS Rounded 1c';
+	border: none;
+	width: 494px;
+	border-bottom: 2px solid;
+	padding: 12px;
+	margin: 5px 0.5%;
+	box-sizing: border-box;
+	background-color: #d3d3d3c2;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+input[type="radio"]:checked+label {
+	background: #e16b;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.label:hover {
+	background-color: #e163;
+}
+
+.label {
+	display: block;
+	float: left;
+	margin: 5px 8px;
+	width: 150px;
+	height: 45px;
+	color: #b20000;
+	font-size: 18px;
+	font-family: 'Montserrat', 'M PLUS Rounded 1c';
+	text-align: center;
+	line-height: 45px;
+	cursor: pointer;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+.labeltitle {
+	display: block;
+	float: left;
+	margin: 5px;
+	height: 45px;
+	width: 120px;
+	text-align: center;
+	line-height: 45px;
+}
+
+.radiogroup {
+	display: flex;
+}
+
+#userID {
+	font-size: 54px;
+}
+
+#submit-button {
+	border: 2px solid #000;
+	border-radius: 22.5px;
+	background: #0000002f;
+	color: #d60808;
+	margin: 5px 8px;
+	width: 624px;
+	height: 40px;
+	font-size: 18px;
+	font-family: 'Montserrat', 'M PLUS Rounded 1c';
+}
+
+#submit-button:hover {
+	background-color: #e163;
+}
+
+#view-button {
+	border: 2px solid #000;
+	border-radius: 22.5px;
+	background: #0000002f;
+	color: #d60808;
+	margin: 5px 8px;
+	width: 140px;
+	height: 40px;
+	font-size: 18px;
+	font-family: 'Montserrat', 'M PLUS Rounded 1c';
+}
+
+#view-button:hover {
+	background-color: #e163;
+}
+
+.rank-table {
+	border-collapse: collapse;
+	font-size: 22px;
+	margin: 25px 0;
+	min-width: 30%;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+	border: 0px;
+}
+
+.rank-container-small {
+	display: flex;
+	justify-content: space-around;
+}
+
+#rank-table-d {
+	margin: auto;
+	min-width: 50%;
+}
+
+@media screen and (max-width:1279px) {
+
+	.rank-table {
+		margin: 10px auto;
+		width: 90%;
+	}
+
+	#rank-table-d {
+		margin: 30px auto;
+		width: 90%;
+	}
+
+	.rank-container-small {
+		display: flex;
+		flex-flow: column;
+	}
+
+}
+
+
+.rank-table thead tr {
+	color: #ffffff;
+	text-align: center;
+}
+
+#rank-table-a thead tr {
+	background-color: #f69;
+}
+
+#rank-table-a tbody tr:last-of-type {
+	border-bottom: 3px solid #f69;
+}
+
+#rank-table-b thead tr {
+	background-color: #0bd;
+}
+
+#rank-table-b tbody tr:last-of-type {
+	border-bottom: 3px solid #0bd;
+}
+
+#rank-table-c thead tr {
+	background-color: #f72;
+}
+
+#rank-table-c tbody tr:last-of-type {
+	border-bottom: 3px solid #f72;
+}
+
+#rank-table-d thead tr {
+	background-color: #07d;
+}
+
+#rank-table-d tbody tr:last-of-type {
+	border-bottom: 3px solid #07d;
+}
+
+.rank-table th,
+.rank-table td {
+	padding: 12px 15px;
+	text-align: center;
+	border-width: 0px 0px;
+}
+
+.rank-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.rank-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f344;
+}
+
+.rank-table .en {
+	font-family: 'Montserrat';
 }

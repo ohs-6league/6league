@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Montserrat:ital,wght@0,400;1,400&display=swap"
+		rel="stylesheet">
+	<title>ロクリーグ | エントリー</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
+	<meta charset="utf-8" />
+</head>
+<script src="header.js"></script>
+
+<body>
+	<h1>ロクリーグ エントリー</h1>
+	<h2>注意事項</h2>
+	<ul>
+		<li>ニックネームは<strong>インターネット上で公開</strong>されます．公開されても問題ないよう，本名は使用しないで下さい．</li>
+		<li>ニックネームは常識の範囲内で付けて下さい．運営が常識に反すると判断した場合には予告無くユーザー登録を取り消す場合があります．</li>
+		<li>ニックネームは8文字以内として下さい．一部の特殊文字は1文字で2文字分以上カウントされます．</li>
+		<li>一部使用できない特殊記号があります．( &amp;&nbsp;&lt;&nbsp;&gt;&nbsp;&quot;&nbsp;&apos;&nbsp;, の6つ)</li>
+		<li>登録が完了すると受付で必要となるIDが発行されます．このIDは<strong>再発行できません</strong>．</li>
+	</ul>
+	<form id="form" method="post"
+		action="https://script.google.com/macros/s/AKfycbwL_en_SoCxxfIXkwdUc9QEzDEtu8YvZ8MSF6BWghIh200tA1wqoWj-5RxiknXKgL7EhA/exec"
+		accept-charset="UTF-8">
+		<div class="radiogroup"><label class="labeltitle">ニックネーム</label><input type="text" name="Name" id="inputname"
+				placeholder="インターネット上で公開されます" />
+		</div>
+		<div class="radiogroup"><label class="labeltitle">人数</label><input type="radio" name="Persons_Num" value="1"
+				id="n1" /><label for="n1" class="label">1人</label>
+			<input type="radio" name="Persons_Num" value="2" id="n2" /><label for="n2" class="label">2人</label>
+			<input type="radio" name="Persons_Num" value="3" id="n3" /><label for="n3" class="label">3人</label>
+		</div>
+		<div class="radiogroup"><label class="labeltitle">カテゴリー</label><input type="radio" name="Category" value="A"
+				id="cA" /><label for="cA" class="label">小学生以下</label>
+			<input type="radio" name="Category" value="B" id="cB" /><label for="cB" class="label">中学生</label>
+			<input type="radio" name="Category" value="C" id="cC" /><label for="cC" class="label">高校生・一般</label>
+		</div>
+		<div id="attention" style="display: none"> 必要事項を入力してください<br></div>
+		<button id="submit-button" type="button">登録</button>
+	</form>
+	<div id="res" style="display:none">
+		ID:<div id="userID" style="display:inline-block">0000</div><br>
+		登録が完了しました．<br>
+		IDは再発行できませんので，スクリーンショットを撮るなどして保存してください．
+	</div>
+</body>
+<script type="text/javascript" src="js_entry.js"></script>
+<script src="footer.js"></script>
+
+</html>
