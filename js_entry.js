@@ -27,8 +27,10 @@ submitButton.onclick = () => {
     if (flag == 2) attention_text.innerHTML = 'ニックネームは8文字以内です<br>';
     return;
   }
+  submitButton.style.display = 'none';
+  attention_text.style.display = 'inline';
+  attention_text.innerHTML = '登録中…<br>';
   formData.append('type', 'register');
-  submitButton.disabled = true;
   const action = form.getAttribute('action')
   const options = {
     method: 'POST',
@@ -40,6 +42,7 @@ submitButton.onclick = () => {
         const resplace = document.getElementById('res');
         const IDplace = document.getElementById('userID');
         IDplace.innerText = text.padStart(4, '0');
+        attention_text.style.display = 'none';
         resplace.style.display = 'block';
       })
       .catch(error => {

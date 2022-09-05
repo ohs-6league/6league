@@ -17,6 +17,15 @@
 <script src="header.js"></script>
 
 <body>
+	<noscript>
+		<div
+			style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #e16; color: #ffffff;">
+			このWebサイトの全ての機能を利用するためにはJavaScriptを有効にする必要があります．
+			<a href="https://pr.toriaez.jp/navi/howto/69.html">
+				あなたのWebブラウザーでJavaScriptを有効にする方法</a>
+			を参照してください．<br>
+		</div>
+	</noscript>
 	<h1>ロクリーグ エントリー</h1>
 	<h2>注意事項</h2>
 	<ul>
@@ -29,20 +38,29 @@
 	<form id="form" method="post"
 		action="https://script.google.com/macros/s/AKfycbwL_en_SoCxxfIXkwdUc9QEzDEtu8YvZ8MSF6BWghIh200tA1wqoWj-5RxiknXKgL7EhA/exec"
 		accept-charset="UTF-8">
-		<div class="radiogroup"><label class="labeltitle">ニックネーム</label><input type="text" name="Name" id="inputname"
-				placeholder="インターネット上で公開されます" />
+		<div class="formcontainer">
+			<div class="formcontainersmall">
+				<label class="labeltitle">ニックネーム</label>
+				<input type="text" name="Name" id="inputname" placeholder="インターネット上で公開されます" />
+			</div>
+			<div class="formcontainersmall">
+				<label class="labeltitle">人数</label>
+				<div class="radiogroup">
+					<input type="radio" name="Persons_Num" value="1" id="n1" /><label for="n1" class="label">1人</label>
+					<input type="radio" name="Persons_Num" value="2" id="n2" /><label for="n2" class="label">2人</label>
+					<input type="radio" name="Persons_Num" value="3" id="n3" /><label for="n3" class="label">3人</label>
+				</div>
+			</div>
+			<div class="formcontainersmall">
+				<label class="labeltitle">カテゴリー</label>
+				<div class="radiogroup">
+					<input type="radio" name="Category" value="A" id="cA" /><label for="cA" class="label">小学生以下</label>
+					<input type="radio" name="Category" value="B" id="cB" /><label for="cB" class="label">中学生</label>
+					<input type="radio" name="Category" value="C" id="cC" /><label for="cC" class="label">高校生・一般</label>
+				</div>
+			</div>
 		</div>
-		<div class="radiogroup"><label class="labeltitle">人数</label><input type="radio" name="Persons_Num" value="1"
-				id="n1" /><label for="n1" class="label">1人</label>
-			<input type="radio" name="Persons_Num" value="2" id="n2" /><label for="n2" class="label">2人</label>
-			<input type="radio" name="Persons_Num" value="3" id="n3" /><label for="n3" class="label">3人</label>
-		</div>
-		<div class="radiogroup"><label class="labeltitle">カテゴリー</label><input type="radio" name="Category" value="A"
-				id="cA" /><label for="cA" class="label">小学生以下</label>
-			<input type="radio" name="Category" value="B" id="cB" /><label for="cB" class="label">中学生</label>
-			<input type="radio" name="Category" value="C" id="cC" /><label for="cC" class="label">高校生・一般</label>
-		</div>
-		<div id="attention" style="display: none"> 必要事項を入力してください<br></div>
+		<div id="attention" style="display: none" class="radiogroup"></div>
 		<button id="submit-button" type="button">登録</button>
 	</form>
 	<div id="res" style="display:none">

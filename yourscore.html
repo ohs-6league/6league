@@ -10,7 +10,7 @@
 		href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Montserrat:ital,wght@0,400;1,400&display=swap"
 		rel="stylesheet">
 	<link rel="shortcut icon" href="favicon.png" type="image/png">
-	<title>ロクリーグ | 成績確認</title>
+	<title>ロクリーグ | ユーザー情報</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta charset="utf-8" />
 </head>
@@ -18,16 +18,30 @@
 <script src="header.js"></script>
 
 <body>
-	<h1>成績確認</h1>
-	<form id="form">
-		<label>ID</label><input type="text" name="ID" id="inputID" placeholder="あなたのIDを入力して下さい" />
+	<noscript>
+		<div
+			style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #e16; color: #ffffff;">
+			このWebサイトの全ての機能を利用するためにはJavaScriptを有効にする必要があります．
+			<a href="https://pr.toriaez.jp/navi/howto/69.html">
+				あなたのWebブラウザーでJavaScriptを有効にする方法</a>
+			を参照してください．<br>
+		</div>
+	</noscript>
+	<h1>ユーザー情報</h1>
+	<form id="form" class="info_id">
+		<label>ID</label><input type="number" name="ID" id="inputID" placeholder="あなたのIDを入力して下さい" />
 		<button id="view-button" type="button">閲覧</button>
 	</form>
-	<table border="1" id="res-table">
+	<div id="attentinon_text_yourscore"></div>
+	<div id="u_head">
+		<h2 id="u_head_text"></h2>
+	</div>
+	<table border="1" id="res-table" style="display:none">
 		<thead>
-			<tr>
-				<th></th>
-				<th>あなたの最高スコア</th>
+			<tr class="head">
+				<th class="forbig"></th>
+				<th>最高スコア</th>
+				<th>平均点</th>
 				<th>挑戦回数</th>
 			</tr>
 		</thead>
@@ -35,69 +49,7 @@
 		</tbody>
 	</table>
 </body>
-<script type="text/javascript">
-	const isNumber = function (value) {
-		return ((typeof value === 'number') && (isFinite(value)));
-	};
-
-	const form = document.getElementById('form')
-	const submitButton = document.getElementById('view-button')
-
-	submitButton.onclick = () => {
-		var uid = document.getElementById('inputID').value;
-		const url = new URL(
-			'https://script.google.com/macros/s/AKfycbwL_en_SoCxxfIXkwdUc9QEzDEtu8YvZ8MSF6BWghIh200tA1wqoWj-5RxiknXKgL7EhA/exec');
-		url.searchParams.append('type', 'userdata');
-		url.searchParams.append('ID', uid);
-		fetch(url, {
-			method: 'GET',
-		})
-			.then(response => response.text())
-			.then(text => {
-				var arr = text.split(',');
-				var table_ele = document.getElementById('res-table');
-
-				var tra = document.createElement('tr');
-				var tda0 = document.createElement('td');
-				tda0.innerText = "シックスボンバー";
-				tda0.classList.add('ha');
-				tra.appendChild(tda0);
-				var tda1 = document.createElement('td');
-				tda1.innerText = parseFloat(arr[4]).toFixed(3);
-				tra.appendChild(tda1);
-				var tda2 = document.createElement('td');
-				tda2.innerText = Math.floor(arr[12] / 1000000);
-				tra.appendChild(tda2);
-				table_ele.appendChild(tra);
-
-				var trb = document.createElement('tr');
-				var tdb0 = document.createElement('td');
-				tdb0.innerText = "漢字ツアーズ";
-				tdb0.classList.add('hb');
-				trb.appendChild(tdb0);
-				var tdb1 = document.createElement('td');
-				tdb1.innerText = parseFloat(arr[6]).toFixed(3);
-				trb.appendChild(tdb1);
-				var tdb2 = document.createElement('td');
-				tdb2.innerText = Math.floor(arr[12] / 10000) % 100;
-				trb.appendChild(tdb2);
-				table_ele.appendChild(trb);
-
-				var trc = document.createElement('tr');
-				var tdc0 = document.createElement('td');
-				tdc0.innerText = "パーセントバルーン";
-				tdc0.classList.add('hc');
-				trc.appendChild(tdc0);
-				var tdc1 = document.createElement('td');
-				tdc1.innerText = parseFloat(arr[8]).toFixed(3);
-				trc.appendChild(tdc1);
-				var tdc2 = document.createElement('td');
-				tdc2.innerText = Math.floor(arr[12] / 100) % 100;
-				trc.appendChild(tdc2);
-				table_ele.appendChild(trc);
-			});
-	}
-</script>
+<script type="text/javascript" src="js_yourscore.js"></script>
 <script src="footer.js"></script>
 
 </html>
