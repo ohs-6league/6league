@@ -204,6 +204,6 @@ form.onkeypress =
                 '%0a&via=ohs_6league&hashtags=ロクリーグ';
             document.getElementById('u_head_text').innerHTML = h + ' ' +
                 '<a class="tw_share" href=' + t +
-                ' target="_blank">結果をツイート</a>';
+                ' target="_blank"><span style="display:inline-block">結果をツイート</span></a>';
           });
     }

@@ -9,8 +9,8 @@ var contents = `
 		<ul class="ul_top">
 			<li><a href="index.html" ontouchstart="">TOP</a></li>
 			<li><a href="rules.html" ontouchstart="">RULES</a></li>
-			<li><a href="rank.html" ontouchstart="">RANKING</a></li>
-			<li><a href="yourscore.html" ontouchstart="">YOUR INFO</a></li>
+			<li><a href="rankb.html" ontouchstart="">RANKING</a></li>
+			<li><a href="yourscoreb.html" ontouchstart="">YOUR INFO</a></li>
 			<li><a href="entry.html" ontouchstart="">ENTRY</a></li>
 			<li><a href="https://twitter.com/ohs_6league" ontouchstart="">TWITTER</a></li>
 		</ul>
