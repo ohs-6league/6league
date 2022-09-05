@@ -663,3 +663,33 @@ input[type="number"] {
 	transition: 1.0s;
 	color: #fff;
 }
+
+.cover {
+	display: flex;
+}
+
+.cover li {
+	list-style: none;
+}
+
+.cover img {
+	display: block;
+	border: solid 10px #FFF;
+	border-radius: 10px;
+	margin: auto;
+}
+
+@media screen and (max-width:679px) {
+	.cover{
+		flex-direction: column;
+	}
+	.cover img {
+		width: 90%;
+	}
+}
+
+@media screen and (min-width:680px) {
+	.cover img {
+		width: 90%;
+	}
+}
